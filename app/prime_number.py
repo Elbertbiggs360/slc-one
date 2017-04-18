@@ -10,24 +10,26 @@ class PrimeNumber(object):
 			if given_argument<3:
 				raise ValueError("Input Number Greater Than 2")
 			else:
-				prime_numbers = [2]
-				for i in range(given_argument): #n
-					if i>131:
-						for n in range(int(math.sqrt(i)) ):#loop through all values between 0 and the square root
-							if n%2==0 or n%3==0 or n%5==0 or n%7==0 or n%11==0:
-								continue
-							else:#for every prime number
-								if i%n!=0 and i is not 1:#check if i is not a multiple of the prime number n
-									prime_numbers.append(i) #add i to prime numbers if it is not
-					elif given_argument>12:
-						if i%2==0 or i%3==0 or i%5==0 or i%7==0 or i%11==0:
-							continue
-						else:
-							if i is not 1:
-								prime_numbers.append(i)
-					else:
-						break
-				return prime_numbers
+				prime_list =[]
+				prime_list.append(2)
+				nextPrime = 3
+
+				while nextPrime<given_argument:
+					isPrime = True
+					sqrt_value = math.sqrt(nextPrime)
+
+					sample_range = [i for i in prime_list if i <= sqrt_value]
+					
+					for i in sample_range:
+						if nextPrime%i==0:
+							isPrime = False
+							break
+					if isPrime:
+						prime_list.append(nextPrime)
+
+					nextPrime +=2
+
+				return prime_list
 
 
 									
