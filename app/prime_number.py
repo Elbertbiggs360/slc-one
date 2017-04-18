@@ -12,22 +12,22 @@ class PrimeNumber(object):
 			else:
 				prime_list =[]
 				prime_list.append(2)
-				nextPrime = 3
+				next_prime = 3
 
-				while nextPrime<given_argument:
-					isPrime = True
-					sqrt_value = math.sqrt(nextPrime)
+				while next_prime<given_argument:
+					is_prime = True
+					sqrt_value = math.sqrt(next_prime)
 
-					sample_range = [i for i in prime_list if i <= sqrt_value]
+					sample_range = [i for i in prime_list if i <= sqrt_value]#(log(n)
 					
 					for i in sample_range:
-						if nextPrime%i==0:
-							isPrime = False
+						if next_prime%i==0:
+							is_prime = False
 							break
-					if isPrime:
-						prime_list.append(nextPrime)
+					if is_prime:
+						prime_list.append(next_prime)
 
-					nextPrime +=2
+					next_prime +=2#(n/2)
 
 				return prime_list
 
