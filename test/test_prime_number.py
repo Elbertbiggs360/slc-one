@@ -1,5 +1,6 @@
 import unittest
 from app.prime_number import PrimeNumber
+import math
 
 class PrimeNumberTest(unittest.TestCase):
 	
@@ -28,10 +29,14 @@ class PrimeNumberTest(unittest.TestCase):
 	def test_function_returns_prime_numbers(self):
 		result = self.prime_number.compute_prime_numbers(15)
 		test_value = False
-		if all((i%2!=0 i%3!=0 or i%5!=0 or i%7!=0) for i in result):
-			test_value = True
-		else:
-			test_value = False
+		for i in result:
+			for n in len(round(math.sqrt(i)))
+				if n%2!=0 or n%3!=0 or n%5!=0:
+					if i%n==0:
+						test_value = False
+					else:
+						test_value = True
+		
 		self.assertTrue(test_value)
 
 
