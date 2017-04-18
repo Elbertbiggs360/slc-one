@@ -4,3 +4,5 @@ def find_max_min(arg):
 		return [len(arg)]
 	else:
 		return [value_list[0], value_list[len(arg)-1]]
+
+find_max_min([3,4,9,1])

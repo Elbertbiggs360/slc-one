@@ -15,3 +15,5 @@ def word_count(word):
 	    return word_dictionary
 	else:
 		raise TypeError("Invalid Input")
+
+word_count(word)
