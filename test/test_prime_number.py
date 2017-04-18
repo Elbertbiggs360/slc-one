@@ -1,5 +1,5 @@
 import unittest
-from app.prime_number import PrimeNumber
+from app.Day_1.growth_mindset import PrimeNumber
 import math
 
 class PrimeNumberTest(unittest.TestCase):
