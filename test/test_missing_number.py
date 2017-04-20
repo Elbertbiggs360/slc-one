@@ -1,5 +1,5 @@
 import unittest
-from app.Day_4.Andelabs.missing_number import MissingNumber
+from app.Day_4.Andelabs.missing_number import find_missing
 
 class MissingNumberTest(unittest.TestCase):
     """docstring for MissingNumberTest"""
