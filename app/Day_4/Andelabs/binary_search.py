@@ -1,35 +1,39 @@
 class BinarySearch(list):
+    """Binary Search Class"""
+
     def __init__(self, a, b):
+        super(BinarySearch, self).__init__()
         if isinstance(a, int) and isinstance(b, int):
-            self.binary_list =  [x*b for x in range(1,a+1)]
-            self.length = len(self.binary_list)
+            for i in range(1, a+1):
+                self.append(i*b)
+            self.length = len(self)
         else:
             raise TypeError
-    def __getitem__(self,key):
-        return  self.binary_list[key] 
-    def search(self, search_item):
-        if isinstance(search_item, int):
-            return self.binary_search(self.binary_list, search_item)
-        else:
-            raise TypeError
-    def binary_search(self, a_list, item):
-        first = 0
-        last = len(a_list)-1
-        found = False
-        midpoint = 0
-        count = 0
-        while first<=last and found is False:
-            count += 1
-            midpoint = (first+last)//2
-            if a_list[midpoint] == item:
-                found = True
-                break
+
+    def search(self, value):
+        found, index = False, 0
+        first, counter, last = 0, 0, len(self)-1 #assign first and last places in the generated list as well as initialize counter to 0
+
+        if value == self[first]: #if value is in first position
+            found, index = True, 0
+
+        elif value == self[last]: #if value is in last position
+            found, index = True, last
+
+        if value > self[last] or value < self[first]: #check if value to search is greater than the largest item in the list or smaller than the smallest item in the list
+            found, index =  True, -1
+
+        while first <= last and not found:
+            mid = (first + last) //2
+
+            if self[mid] == value:
+                found, index = True, mid
+
             else:
-                if item < a_list[midpoint]:
-                    last = midpoint - 1
+                counter += 1
+                if value < self[mid]:
+                    last = mid - 1
                 else:
-                    first = midpoint + 1
-        if a_list[midpoint] == item:
-            return {'count':count, 'index':midpoint}
-        else:
-            return {'count':count, 'index': -1}
+                    first = mid + 1
+
+        return {'count': counter, 'index': index}
