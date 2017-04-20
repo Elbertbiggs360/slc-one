@@ -280,7 +280,7 @@ input[type="submit"]:hover {
 	overflow: hidden;
 	position: absolute;
 	right: 0;
-	top: 44px;
+	top: 25px;
     box-shadow: 0 2px 10px rgba(0,0,0,.2);
     left:-150px;
     z-index: 1;
@@ -303,4 +303,7 @@ input[type="submit"]:hover {
 .grid-li{
     display: block;
     text-align: center;
+}
+::-webkit-scrollbar {
+	display: none;
 }

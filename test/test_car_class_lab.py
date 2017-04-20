@@ -14,8 +14,7 @@ class CarClassTest(unittest.TestCase):
 
     def test_default_car_name(self):
         gm = Car()
-        self.assertEqual('General', gm.name,
-                         msg='The car should be called `General` if no name was passed as an argument')
+        self.assertEqual('General', gm.name, msg='The car should be called `General` if no name was passed as an argument')
 
     def test_default_car_model(self):
         gm = Car()
@@ -52,23 +51,18 @@ class CarClassTest(unittest.TestCase):
         parked_speed = man.speed
         moving_speed = man.drive(7).speed
 
-        self.assertListEqual([parked_speed, moving_speed],
-                             [0, 77],
-                             msg='The Trailer should have speed 0 km/h until you put `the pedal to the metal`')
+        self.assertListEqual([parked_speed, moving_speed], [0, 77], msg='The Trailer should have speed 0 km/h until you put `the pedal to the metal`')
 
     def test_car_speed2(self):
         man = Car('Mercedes', 'SLR500')
         parked_speed = man.speed
         moving_speed = man.drive(3).speed
 
-        self.assertListEqual([parked_speed, moving_speed],
-                             [0, 1000],
-                             msg='The Mercedes should have speed 0 km/h until you put `the pedal to the metal`')
+        self.assertListEqual([parked_speed, moving_speed], [0, 1000], msg='The Mercedes should have speed 0 km/h until you put `the pedal to the metal`')
 
     def test_drive_car(self):
         man = Car('MAN', 'Truck', 'trailer')
         moving_man = man.drive(7)
         moving_man_instance = isinstance(moving_man, Car)
         moving_man_type = type(moving_man) is Car
-        self.assertListEqual([True, True, man.speed],
-                             [moving_man_instance, moving_man_type, moving_man.speed],
+        self.assertListEqual([True, True, man.speed],[moving_man_instance, moving_man_type, moving_man.speed])

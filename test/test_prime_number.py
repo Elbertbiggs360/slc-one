@@ -12,9 +12,9 @@ class PrimeNumberTest(unittest.TestCase):
 
 	def test_function_returns_integers(self):
 		"""Check that the function only returns integers """
-		result = self.prime_number.compute_prime_numbers(10)
+		result = self.prime_number.compute_prime_numbers(33)
 		test_value = False
-		if all(isinstance(result[i], int) for i in result):
+		if all(isinstance(i, int) for i in result):
 			test_value = True
 		else:
 			test_value = False
@@ -24,21 +24,21 @@ class PrimeNumberTest(unittest.TestCase):
 		self.assertIsInstance(self.prime_number.compute_prime_numbers(15), list)
 
 	def test_function_returns_value_error_if_arg_not_int(self):
-		self.assertRaises(TypeError, self.prime_number.compute_prime_numbers(), 'two' )
+		self.assertRaises(TypeError, self.prime_number.compute_prime_numbers, 'two' )
 
 	def test_function_returns_value_error_if_arg_less_than_three(self):
-		self.assertRaises(ValueError('Input Number Greater than 2'), self.prime_number.compute_prime_numbers(), 1)
+		self.assertRaises(ValueError, self.prime_number.compute_prime_numbers, 1)
 
 	def test_function_returns_all_prime_numbers_less_than_arg(self):
 		self.assertEqual(self.sample_prime_length, len(self.prime_number.compute_prime_numbers(self.arg_limit)))
 
-#	def test_function_returns_prime_numbers(self):
-#		is_prime = True
- #        for x in self.prime_number.compute_prime_numbers(self.arg_limit):
- #            sqrt_value = math.sqrt(x)
- #            sample_range = [i for i in self.sample_prime if i <= sqrt_value]
- #            for y in sample_range:
- #                if x%y == 0:
- #                    is_prime = False
- #                    break
- #        self.assertTrue(is_prime)
+	def test_function_returns_prime_numbers(self):
+		is_prime = True
+		for x in self.prime_number.compute_prime_numbers(self.arg_limit):
+			sqrt_value = math.sqrt(x)
+			sample_range = [i for i in self.sample_prime if i <= sqrt_value]
+			for y in sample_range:
+				if x%y == 0:
+					is_prime = False
+					break
+		self.assertTrue(is_prime)

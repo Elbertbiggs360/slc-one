@@ -33,7 +33,7 @@ class PrimeNumber(object):
 
 
 prime_number = PrimeNumber()
-print prime_number.compute_prime_numbers(9)
+print (prime_number.compute_prime_numbers(9))
 
 
 									

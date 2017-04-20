@@ -1,5 +1,4 @@
 import unittest
-from app.Day_2.Andelabs.dataTypes import DataTypes
 
 class DataTypeTestCase(unittest.TestCase):
 

@@ -1,5 +1,5 @@
 import unittest
-from app.Day_3.Andelabs.word_count import word_count
+from app.Day_3.Andelabs.word_count import *
 
 class TestWordCounts(unittest.TestCase):
 
@@ -80,4 +80,4 @@ class TestWordCounts(unittest.TestCase):
         self.assertDictEqual(
             {'hello': 1, 'world': 1},
             words('hello  world'),
-            msg='should count multiple spaces as one'
+            msg='should count multiple spaces as one')
